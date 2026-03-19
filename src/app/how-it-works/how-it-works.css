@@ -20,7 +20,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   animation: fadeUp 0.8s ease forwards;
-  direction: ltr; /* Force steps to lay out left-to-right */
 }
 
 .step-card {

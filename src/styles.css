@@ -27,7 +27,6 @@ html {
 
 body {
   font-family: 'Cairo', sans-serif;
-  direction: rtl;
   background: var(--bg-dark);
   color: var(--text-pri);
   overflow-x: hidden;
