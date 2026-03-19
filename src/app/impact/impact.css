@@ -1,0 +1,38 @@
+.impact-section {
+  background: radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.08) 0%, transparent 50%);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  animation: fadeUp 0.8s ease;
+}
+
+.impact-card {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.impact-icon {
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+}
+
+.impact-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.impact-desc {
+  color: #94A3B8;
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .impact-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,26 @@
+<nav class="navbar" [class.ltr]="!tr.isRtl">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <div class="nav-logo">
+      <span class="logo-icon"></span>
+      <span class="logo-text">NEXTORIA</span>
+    </div>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="#home">{{ tr.t.nav.home }}</a></li>
+      <li><a href="#how-it-works">{{ tr.t.nav.howItWorks }}</a></li>
+      <li><a href="#test">{{ tr.t.nav.test }}</a></li>
+      <li><a href="#impact">{{ tr.t.nav.impact }}</a></li>
+      <li><a href="#about">{{ tr.t.nav.about }}</a></li>
+      <li><a href="#contact">{{ tr.t.nav.contact }}</a></li>
+    </ul>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+      <button class="lang-btn" [class.active]="tr.lang === 'en'" (click)="setLang('en')">{{ tr.t.lang.en }}</button>
+      <button class="lang-btn" [class.active]="tr.lang === 'fr'" (click)="setLang('fr')">{{ tr.t.lang.fr }}</button>
+      <button class="lang-btn" [class.active]="tr.lang === 'ar'" (click)="setLang('ar')">{{ tr.t.lang.ar }}</button>
+    </div>
+  </div>
+</nav>

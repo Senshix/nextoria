@@ -1,0 +1,43 @@
+<section id="contact" class="section contact-section">
+  <h2 class="section-heading gradient-text">{{ tr.t.contact.title }}</h2>
+  <p class="section-sub">{{ tr.t.contact.subtitle }}</p>
+  <div class="glow-divider"></div>
+
+  <div class="contact-card glass-card">
+    <form class="contact-form" (submit)="onSubmit($event)">
+      <div class="form-group">
+        <label class="form-label">{{ tr.t.contact.nameLabel }}</label>
+        <input type="text" class="form-input"
+          [placeholder]="tr.t.contact.namePlaceholder"
+          [(ngModel)]="formData.name" name="name" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">{{ tr.t.contact.emailLabel }}</label>
+        <input type="email" class="form-input"
+          [placeholder]="tr.t.contact.emailPlaceholder"
+          [(ngModel)]="formData.email" name="email" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">{{ tr.t.contact.msgLabel }}</label>
+        <textarea class="form-input form-textarea"
+          [placeholder]="tr.t.contact.msgPlaceholder"
+          [(ngModel)]="formData.message" name="message" rows="5"></textarea>
+      </div>
+
+      <button type="submit" class="btn-gradient submit-btn">
+        {{ tr.t.contact.submit }}
+      </button>
+
+      @if (submitted) {
+        <p class="success-msg">{{ tr.t.contact.success }}</p>
+      }
+    </form>
+
+    <div class="contact-email">
+      <span class="email-icon">✉️</span>
+      <a href="mailto:info@nextoria.ma">info&#64;nextoria.ma</a>
+    </div>
+  </div>
+</section>

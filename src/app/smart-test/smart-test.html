@@ -1,0 +1,35 @@
+<section id="test" class="section test-section">
+  <h2 class="section-heading gradient-text">{{ tr.t.test.title }}</h2>
+  <p class="section-sub">{{ tr.t.test.subtitle }}</p>
+  <div class="glow-divider"></div>
+
+  <div class="test-card glass-card">
+    <div class="test-header">
+      <span class="test-meta">{{ questionLabel }}</span>
+      <span class="test-percent">{{ progress }}%</span>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" [style.width.%]="progress"></div>
+    </div>
+
+    <div class="question-area">
+      <p class="question-text">{{ questions[currentQuestion - 1] }}</p>
+
+      <div class="answer-options">
+        @for (opt of options; track $index) {
+          <button class="option-btn" (click)="selectOption($index + 1)"
+            [class.selected]="selectedOption === $index + 1">
+            {{ opt }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="test-footer">
+      <button class="btn-gradient next-btn" (click)="nextQuestion()">
+        {{ currentQuestion < totalQuestions ? tr.t.test.next : tr.t.test.finish }}
+      </button>
+    </div>
+  </div>
+</section>

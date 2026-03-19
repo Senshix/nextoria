@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  --bg-dark:    #0B1120;
+  --bg-mid:     #0F172A;
+  --bg-card:    #111827;
+  --bg-card2:   #1C2333;
+  --cyan:       #06B6D4;
+  --purple:     #8B5CF6;
+  --indigo:     #6366F1;
+  --text-pri:   #FFFFFF;
+  --text-sec:   #94A3B8;
+  --text-muted: #64748B;
+  --border:     rgba(99, 102, 241, 0.2);
+  --glow-cyan:  rgba(6, 182, 212, 0.15);
+  --glow-purple:rgba(139, 92, 246, 0.15);
+}
+
+/* ─── Reset & Base ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background: var(--bg-dark);
+  color: var(--text-pri);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ─── Typography ─────────────────────────────────────────── */
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.3; }
+
+/* ─── Gradient Text ──────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Gradient Button ────────────────────────────────────── */
+.btn-gradient {
+  display: inline-block;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, var(--indigo) 0%, var(--purple) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+.btn-gradient:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.45);
+}
+
+/* ─── Glass Card ─────────────────────────────────────────── */
+.glass-card {
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.18);
+}
+
+/* ─── Section Wrapper ────────────────────────────────────── */
+.section {
+  padding: 90px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-sec);
+  font-size: 1.05rem;
+  margin-bottom: 56px;
+}
+
+/* ─── Divider glow ───────────────────────────────────────── */
+.glow-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  border-radius: 4px;
+  margin: 0 auto 56px;
+}
+
+/* ─── Fade-in animation ──────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section-heading { font-size: 1.8rem; }
+  .section { padding: 60px 16px; }
+}
